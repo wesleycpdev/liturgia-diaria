@@ -1,0 +1,10 @@
+{
+  "name": "liturgia-diaria",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

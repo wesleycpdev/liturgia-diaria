@@ -1,12 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Liturgia Diária
-    </ion-title>
+    <ion-title>Liturgia Diária</ion-title>
+    <ion-progress-bar type="indeterminate" *ngIf="!liturgiaDoDia"></ion-progress-bar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content *ngIf="liturgiaDoDia">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Liturgia Diária</ion-title>
@@ -14,7 +13,7 @@
   </ion-header>
 
   <ion-item>
-    <h4><strong>{{liturgiaDoDia.liturgia}}</strong></h4>
+    <h4><strong>{{liturgiaDoDia?.liturgia}}</strong></h4>
   </ion-item>
 
   <ion-accordion-group [multiple]="true">
@@ -24,11 +23,11 @@
       </ion-item>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia.primeiraLeitura.titulo}}
+        {{liturgiaDoDia?.primeiraLeitura?.titulo}}
       </div>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia.primeiraLeitura.texto}}
+        {{liturgiaDoDia?.primeiraLeitura?.texto}}
       </div>
     </ion-accordion>
 
@@ -38,21 +37,21 @@
       </ion-item>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia.salmo}}
+        {{liturgiaDoDia?.salmo}}
       </div>
     </ion-accordion>
 
-    <ion-accordion value="segundaLeitura" *ngIf="liturgiaDoDia.segundaLeitura != 'Não há segunda leitura hoje!'">
+    <ion-accordion value="segundaLeitura" *ngIf="liturgiaDoDia?.segundaLeitura != 'Não há segunda leitura hoje!'">
       <ion-item slot="header" color="light">
         <ion-label>2ª Leitura</ion-label>
       </ion-item>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia.segundaLeitura.titulo}}
+        {{liturgiaDoDia?.segundaLeitura?.titulo}}
       </div>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia.segundaLeitura.texto}}
+        {{liturgiaDoDia?.segundaLeitura?.texto}}
       </div>
     </ion-accordion>
 
@@ -62,12 +61,18 @@
       </ion-item>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia.evangelho.titulo}}
+        {{liturgiaDoDia?.evangelho?.titulo}}
       </div>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia.evangelho.texto}}
+        {{liturgiaDoDia?.evangelho?.texto}}
       </div>
     </ion-accordion>
   </ion-accordion-group>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer">
+    v1.0.0
+  </ion-toolbar>
+</ion-footer>

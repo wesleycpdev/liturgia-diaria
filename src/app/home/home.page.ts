@@ -11,10 +11,13 @@ export class HomePage {
   liturgiaDoDia: any;
 
   constructor(liturgiaService: LiturgiaService) {
-    liturgiaService.liturgiaDoDia()
+    setTimeout(() => {
+      liturgiaService.liturgiaDoDia()
     .subscribe(data => {
       this.liturgiaDoDia = data;
+      this.liturgiaDoDia.evangelho.titulo = this.liturgiaDoDia.evangelho.titulo.replace('✠', '✠ ')
     })
+    }, 1000);
   }
 
 }

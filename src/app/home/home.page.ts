@@ -17,7 +17,7 @@ export class HomePage {
       this.liturgiaDoDia = data;
       this.liturgiaDoDia.evangelho.titulo = this.liturgiaDoDia.evangelho.titulo.replace('✠', '✠ ')
     })
-    }, 1000);
+    }, 500);
   }
 
 }

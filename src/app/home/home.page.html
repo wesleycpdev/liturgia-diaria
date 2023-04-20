@@ -19,11 +19,11 @@
   <ion-accordion-group [multiple]="true">
     <ion-accordion value="primeiraLeitura">
       <ion-item slot="header" color="light">
-        <ion-label>1ª Leitura</ion-label>
+        <ion-label>1ª Leitura ({{liturgiaDoDia?.primeiraLeitura.referencia}})</ion-label>
       </ion-item>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia?.primeiraLeitura?.titulo}} ({{liturgiaDoDia?.primeiraLeitura.referencia}})
+        {{liturgiaDoDia?.primeiraLeitura?.titulo}}
       </div>
 
       <div class="ion-padding" slot="content">
@@ -33,21 +33,22 @@
 
     <ion-accordion value="salmo">
       <ion-item slot="header" color="light">
-        <ion-label>Salmo</ion-label>
+        <ion-label>Salmo ({{liturgiaDoDia?.salmo?.referencia}})</ion-label>
       </ion-item>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia?.salmo}}
+        <strong>{{liturgiaDoDia?.salmo?.refrao}}</strong>
+        <p>{{liturgiaDoDia?.salmo?.texto}}</p>  
       </div>
     </ion-accordion>
 
     <ion-accordion value="segundaLeitura" *ngIf="liturgiaDoDia?.segundaLeitura != 'Não há segunda leitura hoje!'">
       <ion-item slot="header" color="light">
-        <ion-label>2ª Leitura</ion-label>
+        <ion-label>2ª Leitura ({{liturgiaDoDia?.segundaLeitura?.referencia}})</ion-label>
       </ion-item>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia?.segundaLeitura?.titulo}} ({{liturgiaDoDia?.segundaLeitura?.referencia}})
+        {{liturgiaDoDia?.segundaLeitura?.titulo}}
       </div>
 
       <div class="ion-padding" slot="content">
@@ -57,11 +58,11 @@
 
     <ion-accordion value="evangelho">
       <ion-item slot="header" color="light">
-        <ion-label>Evangelho</ion-label>
+        <ion-label>Evangelho ({{liturgiaDoDia?.evangelho?.referencia}})</ion-label>
       </ion-item>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia?.evangelho?.titulo}} ({{liturgiaDoDia?.evangelho?.referencia}}) 
+        {{liturgiaDoDia?.evangelho?.titulo}}
       </div>
 
       <div class="ion-padding" slot="content">

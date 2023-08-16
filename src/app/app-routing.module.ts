@@ -7,10 +7,19 @@ const routes: Routes = [
     loadChildren: () => import('./liturgia/liturgia.module').then( m => m.LiturgiaPageModule)
   },
   {
-    path: '',
-    redirectTo: 'liturgia',
-    pathMatch: 'full'
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },  {
+    path: 'material-catequese',
+    loadChildren: () => import('./material-catequese/material-catequese.module').then( m => m.MaterialCatequesePageModule)
+  },
+
+
 ];
 
 @NgModule({

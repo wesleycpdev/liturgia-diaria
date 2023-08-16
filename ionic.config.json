@@ -1,5 +1,5 @@
 {
-  "name": "liturgia-diaria",
+  "name": "catequese",
   "integrations": {
     "capacitor": {
       "enabled": false

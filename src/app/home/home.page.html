@@ -27,7 +27,7 @@
       </div>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia?.primeiraLeitura?.texto}}
+        <div class="textoPrimeiraLeitura" [innerHTML]="textoPrimeiraLeitura"></div>
       </div>
     </ion-accordion>
 
@@ -38,7 +38,7 @@
 
       <div class="ion-padding" slot="content">
         <strong>{{liturgiaDoDia?.salmo?.refrao}}</strong>
-        <p>{{liturgiaDoDia?.salmo?.texto}}</p>  
+        <p class="textoSalmo">{{textoSalmo}}</p>  
       </div>
     </ion-accordion>
 
@@ -52,21 +52,21 @@
       </div>
 
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia?.segundaLeitura?.texto}}
+        <div class="textoPrimeiraLeitura" [innerHTML]="textoSegundaLeitura"></div>
       </div>
     </ion-accordion>
-
+    
     <ion-accordion value="evangelho">
       <ion-item slot="header" color="light">
         <ion-label>Evangelho ({{liturgiaDoDia?.evangelho?.referencia}})</ion-label>
       </ion-item>
-
+      
       <div class="ion-padding" slot="content">
         {{liturgiaDoDia?.evangelho?.titulo}}
       </div>
-
+      
       <div class="ion-padding" slot="content">
-        {{liturgiaDoDia?.evangelho?.texto}}
+        <div class="textoPrimeiraLeitura" [innerHTML]="textoEvangelho"></div>
       </div>
     </ion-accordion>
   </ion-accordion-group>

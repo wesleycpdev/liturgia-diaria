@@ -3,11 +3,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { LiturgiaService } from 'src/services/liturgia.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'liturgia',
+  templateUrl: 'liturgia.page.html',
+  styleUrls: ['liturgia.page.scss'],
 })
-export class HomePage {
+export class LiturgiaPage {
 
   liturgiaDoDia: any;
 

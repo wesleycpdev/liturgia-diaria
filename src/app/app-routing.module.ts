@@ -3,12 +3,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'liturgia',
+    loadChildren: () => import('./liturgia/liturgia.module').then( m => m.LiturgiaPageModule)
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'liturgia',
     pathMatch: 'full'
   },
 ];

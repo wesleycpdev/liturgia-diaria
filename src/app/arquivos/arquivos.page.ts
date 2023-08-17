@@ -11,6 +11,7 @@ export class ArquivosPage implements OnInit {
   url = ""
   titulo = ""
   src = {}
+  zoom = 0.5
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
@@ -25,5 +26,15 @@ export class ArquivosPage implements OnInit {
   }
 
   ngOnInit() {}
+
+  zoomIn() {
+    this.zoom = this.zoom + 0.25;
+  }
+
+  zoomOut() {
+    if (this.zoom > 1) {
+       this.zoom = this.zoom - 0.25;
+    }
+  }
 
 }

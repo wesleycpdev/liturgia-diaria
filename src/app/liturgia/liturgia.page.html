@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
+
     <ion-title>Liturgia Diária</ion-title>
+    
     <ion-progress-bar type="indeterminate" *ngIf="!liturgiaDoDia"></ion-progress-bar>
   </ion-toolbar>
 </ion-header>
@@ -30,7 +32,7 @@
       </div>
 
       <div class="ion-padding" slot="content">
-        <div class="textoPrimeiraLeitura" [innerHTML]="textoPrimeiraLeitura"></div>
+        {{liturgiaDoDia?.primeiraLeitura?.texto}}
       </div>
     </ion-accordion>
 
@@ -41,7 +43,7 @@
 
       <div class="ion-padding" slot="content">
         <strong>{{liturgiaDoDia?.salmo?.refrao}}</strong>
-        <p class="textoSalmo">{{textoSalmo}}</p>  
+        <p class="textoSalmo">{{textoSalmo}}</p>
       </div>
     </ion-accordion>
 
@@ -55,7 +57,7 @@
       </div>
 
       <div class="ion-padding" slot="content">
-        <div class="textoPrimeiraLeitura" [innerHTML]="textoSegundaLeitura"></div>
+        {{liturgiaDoDia?.segundaLeitura?.texto}}
       </div>
     </ion-accordion>
     
@@ -69,7 +71,7 @@
       </div>
       
       <div class="ion-padding" slot="content">
-        <div class="textoPrimeiraLeitura" [innerHTML]="textoEvangelho"></div>
+        {{liturgiaDoDia?.evangelho?.texto}}
       </div>
     </ion-accordion>
   </ion-accordion-group>

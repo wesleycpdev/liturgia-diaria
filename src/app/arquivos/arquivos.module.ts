@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MaterialCatequesePageRoutingModule } from './material-catequese-routing.module';
+import { ArquivosPageRoutingModule } from './arquivos-routing.module';
 
-import { MaterialCatequesePage } from './material-catequese.page';
+import { ArquivosPage } from './arquivos.page';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     CommonModule,
     FormsModule,
     IonicModule,
-    MaterialCatequesePageRoutingModule,
+    ArquivosPageRoutingModule,
     PdfViewerModule
   ],
-  declarations: [MaterialCatequesePage]
+  declarations: [ArquivosPage]
 })
-export class MaterialCatequesePageModule {}
+export class ArquivosPageModule {}

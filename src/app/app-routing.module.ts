@@ -14,11 +14,15 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'material-catequese',
     loadChildren: () => import('./material-catequese/material-catequese.module').then( m => m.MaterialCatequesePageModule)
   },
-
+  {
+    path: 'arquivos',
+    loadChildren: () => import('./arquivos/arquivos.module').then( m => m.ArquivosPageModule)
+  },
 
 ];
 

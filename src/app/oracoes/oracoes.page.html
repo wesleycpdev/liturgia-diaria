@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Orações</ion-title>
+    
+    <ion-progress-bar type="indeterminate" *ngIf="oracoes.length == 0"></ion-progress-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Pesquisar" [(ngModel)]="textoPesquisa" (ionInput)="pesquisar($event)"></ion-searchbar>
+
+  <ion-accordion-group *ngIf="oracoes.length > 0 && textoPesquisa == ''">
+    <ng-container *ngFor="let oracao of oracoes">
+      <ion-accordion>
+        <ion-item slot="header" color="light">
+          <ion-label>{{oracao.titulo}}</ion-label>
+        </ion-item>
+
+        <div class="ion-padding" slot="content">
+          {{oracao.texto}}
+        </div>
+      </ion-accordion>
+    </ng-container>
+  </ion-accordion-group>
+
+  <ion-accordion-group *ngIf="oracoes.length > 0 && textoPesquisa != ''">
+    <ng-container *ngFor="let oracao of oracoesFiltradas">
+      <ion-accordion>
+        <ion-item slot="header" color="light">
+          <ion-label>{{oracao.titulo}}</ion-label>
+        </ion-item>
+
+        <div class="ion-padding" slot="content">
+          {{oracao.texto}}
+        </div>
+      </ion-accordion>
+    </ng-container>
+  </ion-accordion-group>
+</ion-content>

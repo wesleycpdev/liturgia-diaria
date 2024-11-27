@@ -14,7 +14,7 @@ export class OracoesPage implements OnInit {
 
   constructor() {
     setTimeout(() => {
-      this.oracoes = oracoes;
+      this.oracoes = oracoes.sort((a, b) => a.titulo < b.titulo ? -1 : a.titulo > b.titulo ? 1 : 0);
     }, 500);
   }
 
